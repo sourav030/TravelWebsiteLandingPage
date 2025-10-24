@@ -4,6 +4,9 @@ import Hero from '../component/Hero'
 import Category from '../component/Category'
 import BookTrip from '../component/BookTrip'
 import Testinomial from '../component/Testinomial'
+import Logo from '../component/Logo'
+import Suscribe from '../component/Suscribe'
+import Footer from '../component/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +16,9 @@ const Home = () => {
       <Category />
       <BookTrip />
       <Testinomial />
+      <Logo/>
+      <Suscribe/>
+      <Footer/>
     </div>
   )
 }
