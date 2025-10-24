@@ -2,126 +2,94 @@ import React from 'react'
 import { Cat1, Cat2, Cat3, Group48, Group50, Group51, Group, Rectangle, Dest1, Dest2, Dest3, Sent } from '../assets/assest.js'
 
 const Category = () => {
-  return (
-    <div>
+    return (
+      
+        <div className='py-10 md:py-20'>
 
-      <div style={{ position: "relative", bottom: "140px" }}>
-        <center>
-          <p style={{ paddingLeft: "0px" }} className=' text-2xl'>Category</p>
-          <h1 className='font-bold text-4xl '>We offer best service</h1>
-        </center>
-      </div>
+          
+            <div className='text-center mb-16'>
+                <p className='text-xl text-gray-500'>Category</p>
+                <h1 className='font-bold text-3xl md:text-4xl lg:text-5xl mt-2'>We offer best service</h1>
+            </div>
 
-      {/* Category section contain image p and h */}
+            
+            <div 
+                className='flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-20 px-4 md:px-10'
+            >
+              
+                {[
+                    { img: Group48, title: "Calculated Weather", desc: "Built Wicket longer admire do barton vanity itself do in it" },
+                    { img: Group, title: "Best Flight", desc: "Engrossed listening. Park gate sell they west hard for the" },
+                    { img: Group50, title: "Local Event", desc: "Barton vanity itself do in it. Preferd to men it engrossed listening" },
+                    { img: Group51, title: "Customization", desc: "We deliver outsourced aviation services for millitary customers" },
+                ].map((service, index) => (
+                    <div 
+                        key={index} 
+                        className='w-full sm:w-[45%] md:w-[200px] lg:w-[220px] 
+                                   p-6 flex flex-col items-center text-center 
+                                   rounded-3xl shadow-lg transition-all duration-300 
+                                   hover:shadow-xl bg-white hover:scale-[1.02] cursor-pointer'
+                    >
+                      
+                        <img className='h-16 w-16 mb-4 object-contain' src={service.img} alt={service.title} />
+                        
+                        
+                        <h2 className='font-semibold text-xl mb-2'>{service.title}</h2>
+                        
+                       
+                        <p className='text-gray-500 text-sm'>{service.desc}</p>
+                    </div>
+                ))}
+            </div>
 
-      <div style={{ position: "relative", bottom: "65px", paddingLeft: "300px" }} className='flex gap-20'>
+            
 
-        <div>
-          <div className=' rounded-2xl w-[185px] flex flex-col justify-center items-center shadow-md'>
-            <img className='h-25 w-35' src={Group48} alt="" />
-            <h2 className='font-semibold text-lg'>Calculated Weather</h2>
-            <p className='p-4'>Built Wicket longer admire do barton vanity itself do in it</p>
-          </div>
-        </div>
+            
+            <div className='text-center mt-20 mb-10'>
+                <p className='text-xl text-gray-500'>Top Selling</p>
+                <h1 className='font-bold text-3xl md:text-4xl lg:text-5xl mt-2'>Top Destination</h1>
+            </div>
 
-        <div>
-          <div className='rounded-2xl w-[185px] flex flex-col justify-center items-center shadow-md'>
-            <img className='h-25 w-35' src={Group} alt="" />
-            <h2 className='font-semibold text-lg'>Best Flight</h2>
-            <p className='p-4'>Engrossed listening. Park gate sell they west hard for the</p>
-          </div>
-        </div>
+            
+            <div className="flex flex-wrap justify-center gap-8 md:gap-10 px-4">
+               
+                {[
+                    { img: Dest1, location: "Rome, Italy", price: "$1.54k", duration: "10 Day trip" },
+                    { img: Dest2, location: "London, UK", price: "$2.4k", duration: "12 Day trip" },
+                    { img: Dest3, location: "Paris, France", price: "$1.8k", duration: "7 Day trip" },
+                ].map((dest, index) => (
+                    <div 
+                        key={index} 
+                      
+                        className="w-full sm:w-[300px] lg:w-[280px] h-auto pb-5 
+                                   rounded-2xl shadow-lg bg-white 
+                                   transition duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer"
+                    >
+                        
+                        <img 
+                            className="h-52 w-full object-cover rounded-t-2xl mb-4" 
+                            src={dest.img} 
+                            alt={dest.location} 
+                        />
 
-        <div>
-          <div className=' rounded-2xl shadow-md w-[185px] flex flex-col justify-center items-center'>
-            <img className='h-25 w-35' src={Group50} alt="" />
-            <h2 className='font-semibold text-lg'>Local Event</h2>
-            <p className='p-4'>Barton vanity itself do in it. Preferd to men it engrossed listening</p>
-          </div>
-        </div>
+                        <div className="px-5">
+                          
+                            <div className="flex justify-between text-gray-800">
+                                <p className="text-base font-medium">{dest.location}</p>
+                                <p className="font-semibold">{dest.price}</p>
+                            </div>
 
-        <div>
-          <div className=' rounded-2xl shadow-md  w-[185px] flex flex-col justify-center items-center'>
-            <img className='h-25 w-35' src={Group51} alt="" />
-            <h2 className='font-semibold text-lg'>Customization</h2>
-            <p className='p-4'>We deliver outsourced aviation services for millitary customers</p>
-          </div>
-        </div>
-
-      </div>
-
-      {/* This is Destination part */}
-
-      <div style={{ position: "relative", bottom: "10px" }}>
-        <center>
-          <p style={{ paddingLeft: "0px" }} className=' text-2xl'>Top Selling</p>
-          <h1 className='font-bold text-4xl '>Top Destination</h1>
-        </center>
-      </div>
-
-      <div className="flex flex-wrap justify-center gap-10 mt-5 px-10">
-        
-        {/* Destination Card */}
-        <div className="rounded-2xl w-[255px] h-[260px] flex flex-col items-center shadow-md bg-white transition hover:shadow-lg">
-          {/* Image */}
-          <img className="h-40 w-70 mt-4 object-cover rounded-xl" src={Dest1} alt="Destination" />
-
-          {/* Destination Name & Price */}
-          <div className="flex justify-between w-[80%] mt-3 text-gray-700">
-            <p className="text-sm font-medium">Rome, Italy</p>
-            <p className="font-semibold">$1.54k</p>
-          </div>
-
-          {/* Trip Info (Left side) */}
-          <div className="flex items-center gap-2 self-start ml-5 mt-2 text-gray-500">
-            <img src={Sent} alt="Trip Icon" className="w-4 h-4" />
-            <p className="text-sm">10 Day trip</p>
-          </div>
-        </div>
-
-
-        {/* Best Flight Card */}
-        <div className="rounded-2xl w-[255px] h-[260px] flex flex-col items-center shadow-md bg-white transition hover:shadow-lg">
-          {/* Image */}
-          <img className="h-40 w-70 mt-4 object-cover rounded-xl" src={Dest2} alt="Destination" />
-
-          {/* Destination Name & Price */}
-          <div className="flex justify-between w-[80%] mt-3 text-gray-700">
-            <p className="text-sm font-medium">Rome, Italy</p>
-            <p className="font-semibold">$1.54k</p>
-          </div>
-
-          {/* Trip Info (Left side) */}
-          <div className="flex items-center gap-2 self-start ml-5 mt-2 text-gray-500">
-            <img src={Sent} alt="Trip Icon" className="w-4 h-4" />
-            <p className="text-sm">10 Day trip</p>
-          </div>
-        </div>
-
-
-        {/* Local Event Card */}
-        <div className="rounded-2xl w-[255px] h-[260px] flex flex-col items-center shadow-md bg-white transition hover:shadow-lg">
-          {/* Image */}
-          <img className="h-40 w-70 mt-4 object-cover rounded-xl" src={Dest3} alt="Destination" />
-
-          {/* Destination Name & Price */}
-          <div className="flex justify-between w-[80%] mt-3 text-gray-700">
-            <p className="text-sm font-medium">Rome, Italy</p>
-            <p className="font-semibold">$1.54k</p>
-          </div>
-
-          {/* Trip Info (Left side) */}
-          <div className="flex items-center gap-2 self-start ml-5 mt-2 text-gray-500">
-            <img src={Sent} alt="Trip Icon" className="w-4 h-4" />
-            <p className="text-sm">10 Day trip</p>
-          </div>
-        </div>
-
-      </div>
-
-
-    </div >
-  )
+                          
+                            <div className="flex items-center gap-2 mt-2 text-gray-500">
+                                <img src={Sent} alt="Trip Icon" className="w-4 h-4" />
+                                <p className="text-sm">{dest.duration}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div >
+    )
 }
 
 export default Category
